@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class ItemAtendimento
+    class ItemAtendimento : Entidade
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
@@ -23,7 +23,10 @@ namespace FatStudio.Dominio.Entidades
 
         public int Quantidade { get; set; }
 
-
-
+        public override void Validate()
+        {
+            if (Data == null)
+                AdicionarCritica("A Data é de preenchimento obrigatório");
+        }
     }
 }

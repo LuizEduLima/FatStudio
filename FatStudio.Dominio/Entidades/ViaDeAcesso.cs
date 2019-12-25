@@ -4,7 +4,7 @@ using System.Text;
 using FatStudio.Dominio.Entidades.Enums;
 namespace FatStudio.Dominio.Entidades
 {
-    class ViaDeAcesso
+    class ViaDeAcesso : Entidade
     {
         public int Id { get; set; }
         public string Descricao { get; set; }
@@ -22,6 +22,13 @@ namespace FatStudio.Dominio.Entidades
             get {
                 return Id == (int)TipoViaDeAcessoEnum.ViaDiferente;
             }
+        }
+
+        public override void Validate()
+        {
+
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarCritica("Descrição, o preechimento é obrigatório");
         }
     }
 }

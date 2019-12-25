@@ -4,12 +4,12 @@ using System.Text;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class Beneficiario
+    class Beneficiario : Entidade
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public DateTime dateTime { get; set; }
-        public int Sexo { get; set; }
+        public char Sexo { get; set; }
         public string Identidade { get; set; }
         public string CPF { get; set; }
 
@@ -19,7 +19,22 @@ namespace FatStudio.Dominio.Entidades
         /// </summary>
         public ICollection<PlanoSaude> Planos { get; set; } = new List<PlanoSaude>();
 
+        public override void Validate()
+        {
+            if (Nome == string.Empty) 
+            AdicionarCritica("O Campo Nome é de preenchimento obrigatório.");
 
+            if (Sexo == Convert.ToChar(string.Empty))
+                AdicionarCritica("O Campo Sexo é de preenchimento obrigatório.");
 
+            if (Identidade == string.Empty)
+                AdicionarCritica("O Campo Identidade é de preenchimento obrigatório.");
+
+            if (CPF == string.Empty)
+                AdicionarCritica("O Campo CPF é de preenchimento obrigatório.");
+
+        }
+
+       
     }
 }

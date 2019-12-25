@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class Atendimento
+    class Atendimento:Entidade
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
@@ -14,7 +15,7 @@ namespace FatStudio.Dominio.Entidades
         public string RegistroAns { get; set; }
         public string NumeroGuiaSolicitacaoInternacao { get; set; }
         public string Senha { get; set; }
-        public string NumeroDaGuiaAtribuidaPleaOperadora { get; set; }
+        public string NumeroDaGuiaAtribuidaPelaOperadora { get; set; }
 
         
         public int BeneficiarioId { get; set; }
@@ -28,8 +29,17 @@ namespace FatStudio.Dominio.Entidades
 
         public List<ItemAtendimento> Items { get; set; } = new List<ItemAtendimento>();
 
+        public override void Validate()
+        {
+            LimparMensagemValidacao();
 
+            if (NumeroGuiaNoPrestador == string.Empty)
+                AdicionarCritica("Numero da Guia no Prestador tem que ser informada.");
+                               
+            if(!Items.Any())           
+               AdicionarCritica("Informe pelo menos um procedimento realizado..");
 
-
+        }
+        
     }
 }

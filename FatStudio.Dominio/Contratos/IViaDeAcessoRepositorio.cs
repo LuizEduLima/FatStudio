@@ -5,7 +5,7 @@ using FatStudio.Dominio.Entidades;
 
 namespace FatStudio.Dominio.Contratos
 {
-    public interface IVidaDeAcessoRepositorio:IBaseREpositorio<ViaDeAcesso>
+    public interface IViaDeAcessoRepositorio:IBaseREpositorio<ViaDeAcesso>
     {
     }
 }

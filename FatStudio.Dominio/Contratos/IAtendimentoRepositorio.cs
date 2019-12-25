@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FatStudio.Dominio.Contratos
 {
-    interface IAtendimentoRepositorio:IBaseREpositorio<Atendimento>
+    public interface IAtendimentoRepositorio:IBaseREpositorio<Atendimento>
     {
     }
 }

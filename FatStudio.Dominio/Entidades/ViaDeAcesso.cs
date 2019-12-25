@@ -4,7 +4,7 @@ using System.Text;
 using FatStudio.Dominio.Entidades.Enums;
 namespace FatStudio.Dominio.Entidades
 {
-    class ViaDeAcesso : Entidade
+    public class ViaDeAcesso : Entidade
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

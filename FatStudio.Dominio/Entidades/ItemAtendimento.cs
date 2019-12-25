@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class ItemAtendimento : Entidade
+    public class ItemAtendimento : Entidade
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }

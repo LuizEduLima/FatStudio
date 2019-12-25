@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class Operadora : Entidade
+    public class Operadora : Entidade
     {
         public int Id { get; set; }
         public string RegistroANS { get; set; }

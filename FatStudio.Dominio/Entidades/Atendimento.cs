@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FatStudio.Dominio.Entidades
 {
-    class Atendimento:Entidade
+    public class Atendimento:Entidade
     {
         public int Id { get; set; }
         public DateTime Data { get; set; }
